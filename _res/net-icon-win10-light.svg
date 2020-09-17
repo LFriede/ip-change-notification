@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="net-icon-win10-light.svg"
+   inkscape:export-filename="C:\Users\gordon--\Desktop\net-icon.png"
+   inkscape:export-xdpi="3.0000002"
+   inkscape:export-ydpi="3.0000002">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5203">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="0"
+         id="stop5199" />
+      <stop
+         style="stop-color:#000000;stop-opacity:1"
+         offset="1"
+         id="stop5201" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5203"
+       id="linearGradient5205"
+       x1="-7.2727275"
+       y1="577.53333"
+       x2="97.454544"
+       y2="577.53333"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.2222222,0,0,1,-39.111111,0)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5203"
+       id="linearGradient5205-7"
+       x1="-7.2727275"
+       y1="577.53333"
+       x2="97.454544"
+       y2="577.53333"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.2222222,0,0,1,-551.11111,-1.0195312e-5)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="107.95193"
+     inkscape:cy="241.98009"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="px"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3713"
+       spacingx="16"
+       spacingy="16"
+       empspacing="1" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-161.53332)">
+    <rect
+       id="rect4070"
+       width="32"
+       height="32"
+       x="80"
+       y="225.53333" />
+    <rect
+       id="rect4070-8"
+       width="32"
+       height="32"
+       x="48"
+       y="257.53333"
+       inkscape:transform-center-x="79.802051"
+       inkscape:transform-center-y="-126.26907" />
+    <rect
+       id="rect4070-1"
+       width="32"
+       height="32"
+       x="80"
+       y="257.53333" />
+    <rect
+       id="rect4070-9"
+       width="32"
+       height="32"
+       x="80"
+       y="289.53333" />
+    <rect
+       id="rect4070-3"
+       width="32"
+       height="32"
+       x="80"
+       y="321.53333" />
+    <rect
+       id="rect4070-80"
+       width="32"
+       height="32"
+       x="80"
+       y="353.53333" />
+    <rect
+       id="rect4070-7"
+       width="32"
+       height="32"
+       x="176"
+       y="257.53333" />
+    <rect
+       id="rect4070-6"
+       width="32"
+       height="32"
+       x="208"
+       y="225.53333" />
+    <rect
+       id="rect4070-4"
+       width="32"
+       height="32"
+       x="240"
+       y="225.53333" />
+    <rect
+       id="rect4070-0"
+       width="32"
+       height="32"
+       x="272"
+       y="257.53333" />
+    <rect
+       id="rect4070-37"
+       width="32"
+       height="32"
+       x="176"
+       y="289.53333" />
+    <rect
+       id="rect4070-44"
+       width="32"
+       height="32"
+       x="208"
+       y="321.53333" />
+    <rect
+       id="rect4070-63"
+       width="32"
+       height="32"
+       x="240"
+       y="321.53333"
+       inkscape:transform-center-x="-17.172593"
+       inkscape:transform-center-y="89.903577" />
+    <rect
+       id="rect4070-61"
+       width="32"
+       height="32"
+       x="272"
+       y="321.53333" />
+    <rect
+       id="rect4070-5"
+       width="32"
+       height="32"
+       x="272"
+       y="289.53333" />
+    <rect
+       id="rect4070-53"
+       width="32"
+       height="32"
+       x="272"
+       y="353.53333" />
+    <rect
+       id="rect4070-84"
+       width="32"
+       height="32"
+       x="272"
+       y="385.53333" />
+    <rect
+       id="rect4070-54"
+       width="32"
+       height="32"
+       x="240"
+       y="417.53333" />
+    <rect
+       id="rect4070-64"
+       width="32"
+       height="32"
+       x="208"
+       y="417.53333" />
+    <rect
+       id="rect4070-2"
+       width="32"
+       height="32"
+       x="176"
+       y="385.53333"
+       inkscape:transform-center-x="-49.497475"
+       inkscape:transform-center-y="102.02541" />
+    <rect
+       id="rect4070-75"
+       width="32"
+       height="32"
+       x="112"
+       y="417.53333" />
+    <rect
+       id="rect4070-540"
+       width="32"
+       height="32"
+       x="80"
+       y="385.53333" />
+    <rect
+       id="rect4070-753"
+       width="32"
+       height="32"
+       x="80"
+       y="417.53333" />
+    <rect
+       id="rect4070-26"
+       width="32"
+       height="32"
+       x="48"
+       y="417.53333" />
+    <rect
+       id="rect4070-04"
+       width="32"
+       height="32"
+       x="336"
+       y="257.53333" />
+    <rect
+       id="rect4070-09"
+       width="32"
+       height="32"
+       x="368"
+       y="225.53333" />
+    <rect
+       id="rect4070-93"
+       width="32"
+       height="32"
+       x="400"
+       y="225.53333" />
+    <rect
+       id="rect4070-12"
+       width="32"
+       height="32"
+       x="432"
+       y="257.53333" />
+    <rect
+       id="rect4070-378"
+       width="32"
+       height="32"
+       x="432"
+       y="289.53333" />
+    <rect
+       id="rect4070-443"
+       width="32"
+       height="32"
+       x="336"
+       y="417.53333"
+       inkscape:transform-center-x="-14.142136"
+       inkscape:transform-center-y="65.659915" />
+    <rect
+       id="rect4070-20"
+       width="32"
+       height="32"
+       x="368"
+       y="417.53333" />
+    <rect
+       id="rect4070-70"
+       width="32"
+       height="32"
+       x="400"
+       y="417.53333" />
+    <rect
+       id="rect4070-38"
+       width="32"
+       height="32"
+       x="432"
+       y="417.53333" />
+    <rect
+       id="rect4070-60"
+       width="32"
+       height="32"
+       x="336"
+       y="385.53333" />
+    <rect
+       id="rect4070-13"
+       width="32"
+       height="32"
+       x="368"
+       y="353.53333" />
+    <rect
+       id="rect4070-86"
+       width="32"
+       height="32"
+       x="400"
+       y="321.53333" />
+    <rect
+       id="rect4291"
+       width="16"
+       height="256"
+       x="16"
+       y="209.53333"
+       style="stroke-width:0.97014248;fill-opacity:1;fill:#000000" />
+    <rect
+       id="rect4293"
+       width="448"
+       height="16"
+       x="32"
+       y="465.53333"
+       style="fill-opacity:1;fill:#000000" />
+    <rect
+       id="rect4295"
+       width="16"
+       height="256"
+       x="480"
+       y="209.53333"
+       style="fill-opacity:1;fill:#000000" />
+    <rect
+       id="rect4297"
+       width="448"
+       height="16"
+       x="32"
+       y="193.53333"
+       style="fill-opacity:1;fill:#000000" />
+    <rect
+       id="rect4299"
+       width="32"
+       height="95.999992"
+       x="176"
+       y="529.53333"
+       style="stroke-width:1.2247448;fill-opacity:1;fill:#000000" />
+    <rect
+       id="rect4301"
+       width="96"
+       height="32"
+       x="208"
+       y="625.53333"
+       style="stroke-width:1.22474492;fill-opacity:1;fill:#000000" />
+    <rect
+       id="rect4303"
+       width="96"
+       height="32"
+       x="208"
+       y="497.53333"
+       style="stroke-width:1.22474492;fill-opacity:1;fill:#000000" />
+    <rect
+       id="rect4305"
+       width="32"
+       height="95.999992"
+       x="304"
+       y="529.53333"
+       style="stroke-width:1.2247448;fill-opacity:1;fill:#000000" />
+    <rect
+       id="rect4307"
+       width="176"
+       height="32"
+       x="-2.8421709e-14"
+       y="561.53333"
+       style="fill:url(#linearGradient5205);fill-opacity:1;stroke-width:1.10554159" />
+    <rect
+       id="rect4307-8"
+       width="176"
+       height="32"
+       x="-512"
+       y="561.53333"
+       style="fill:url(#linearGradient5205-7);fill-opacity:1;stroke-width:1.10554159"
+       transform="scale(-1,1)" />
+  </g>
+</svg>

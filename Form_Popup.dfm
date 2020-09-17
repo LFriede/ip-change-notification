@@ -1,0 +1,53 @@
+object PopupForm: TPopupForm
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'PopupForm'
+  ClientHeight = 117
+  ClientWidth = 247
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnPaint = FormPaint
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 13
+  object ContentLabel: TLabel
+    Left = 8
+    Top = 30
+    Width = 74
+    Height = 16
+    Caption = 'ContentLabel'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object TitleLabel: TLabel
+    Left = 8
+    Top = 8
+    Width = 61
+    Height = 16
+    Caption = 'TitleLabel'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object PopupTimer: TTimer
+    Enabled = False
+    OnTimer = PopupTimerTimer
+    Left = 168
+    Top = 32
+  end
+end
