@@ -7,7 +7,7 @@ uses
   System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
   Vcl.ExtCtrls, Vcl.StdCtrls, System.Math, IdBaseComponent, IdComponent,
   IdTCPConnection, IdTCPClient, IdEcho, IdIcmpClient, IdRawBase, IdRawClient,
-  Winapi.MMSystem;
+  Winapi.MMSystem, System.Win.TaskbarCore, Vcl.Taskbar;
 
 type
   TPingThread = class(TThread)
@@ -32,6 +32,7 @@ type
     pnlStatus: TPanel;
     pntGraph: TPaintBox;
     pnlGraph: TPanel; // PaintBox draws on parent, having a doublebuffered panel under it = no flicker ;)
+    TaskbarStatus: TTaskbar;
     procedure pntGraphPaint(Sender: TObject);
     function pntGraphMaxVisibleValue:Cardinal;
     procedure PingThreadReply(const AReplyStatus: TReplyStatus; thread:TThread);
@@ -103,6 +104,7 @@ end;
 procedure TPingGraphForm.btnStartStopClick(Sender: TObject);
 begin
   pnlStatus.Color := clBtnFace;
+  TaskbarStatus.ProgressState := TTaskBarProgressState.None;
 
   if (pingThreadRunning) then begin
     StopPingThread(False);
@@ -268,11 +270,15 @@ end;
 
 procedure TPingGraphForm.StatusChange;
 begin
+  if (pingThreadRunning = False) then Exit;
+
   if (pingStatus = 0) then begin
     pnlStatus.Color := $002da800;
+    TaskbarStatus.ProgressState := TTaskBarProgressState.Normal;
     if (cbSound.Checked) then PlaySound('connect.wav', 0, SND_ASYNC);
   end else begin
     pnlStatus.Color := $00223cd2;
+    TaskbarStatus.ProgressState := TTaskBarProgressState.Error;
     if (cbSound.Checked) then PlaySound('disconnect.wav', 0, SND_ASYNC);
   end;
 end;

@@ -126,4 +126,12 @@ object PingGraphForm: TPingGraphForm
       OnPaint = pntGraphPaint
     end
   end
+  object TaskbarStatus: TTaskbar
+    TaskBarButtons = <>
+    ProgressMaxValue = 1
+    ProgressValue = 1
+    TabProperties = []
+    Left = 40
+    Top = 144
+  end
 end
