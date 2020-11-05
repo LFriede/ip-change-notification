@@ -65,6 +65,8 @@ type
     procedure menuReleaseRenewClick(Sender: TObject);
     procedure Pinggraph1Click(Sender: TObject);
     procedure menuPWGenClick(Sender: TObject);
+    procedure TrayIcon1MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
   private
     { Private-Deklarationen }
     IpChangeHandle:THandle;
@@ -622,6 +624,17 @@ end;
 procedure TForm1.TrayIcon1Click(Sender: TObject);
 begin
   Show;
+end;
+
+procedure TForm1.TrayIcon1MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+var
+  r:SmallInt;
+begin
+  r := GetAsyncKeyState(VK_CONTROL);
+  if ((r and $8000) = $8000) then begin
+    PopupForm.ShowAgain;
+  end;
 end;
 
 procedure TForm1.WndProc(var msg:TMessage);

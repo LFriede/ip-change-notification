@@ -19,11 +19,14 @@ type
     { Private-Deklarationen }
     FBorderColor:TColor;
     FDarkMode:Boolean;
+    FShown:Boolean;
+    procedure DoPopup;
     procedure SetDarkMode(Dark:Boolean);
   public
     { Public-Deklarationen }
     property DarkMode:Boolean read FDarkMode write SetDarkMode;
     procedure Popup(title, hint:string);
+    procedure ShowAgain;
   end;
 
 var
@@ -33,9 +36,21 @@ implementation
 
 {$R *.dfm}
 
+procedure TPopupForm.DoPopup;
+begin
+  FShown := True;
+
+  PopupTimer.Interval := globalconfig.PopupTime;
+
+  Show;
+  PopupTimer.Enabled := False; // Resets the Timer if enabled
+  PopupTimer.Enabled := True;
+end;
+
 procedure TPopupForm.FormCreate(Sender: TObject);
 begin
   DarkMode := False;
+  FShown := False;
 end;
 
 procedure TPopupForm.FormPaint(Sender: TObject);
@@ -60,11 +75,7 @@ begin
   Left := Screen.WorkAreaWidth - Width - 8;
   Top := Screen.WorkAreaHeight - Height - 8;
 
-  PopupTimer.Interval := globalconfig.PopupTime;
-
-  Show;
-  PopupTimer.Enabled := False; // Resets the Timer if enabled
-  PopupTimer.Enabled := True;
+  DoPopup;
 end;
 
 procedure TPopupForm.PopupTimerTimer(Sender: TObject);
@@ -86,6 +97,12 @@ begin
     ContentLabel.Font.Color := clWindowText;
     TitleLabel.Font.Color := clWindowText;
   end;
+end;
+
+procedure TPopupForm.ShowAgain;
+begin
+  if (FShown = False) then Exit;
+  DoPopup;
 end;
 
 end.

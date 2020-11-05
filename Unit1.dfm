@@ -32,6 +32,7 @@ object Form1: TForm1
   object TrayIcon1: TTrayIcon
     PopupMenu = pmTrayIcon
     OnClick = TrayIcon1Click
+    OnMouseMove = TrayIcon1MouseMove
     Left = 24
     Top = 24
   end
