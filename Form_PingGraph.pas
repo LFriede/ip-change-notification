@@ -114,6 +114,7 @@ begin
     FillChar(pingRecord[0], sizeof(pingRecord[0]) * Length(pingRecord), #0);
     pingIndex := 0;
     memoLog.Clear;
+    Caption := edtHostname.Text + ' - Ping graph';
     pingStatus := -1;
     StartPingThread(edtHostname.Text);
   end;
