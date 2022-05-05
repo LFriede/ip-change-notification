@@ -37,7 +37,6 @@ object PWGenForm: TPWGenForm
     Anchors = [akLeft, akTop, akRight]
     ReadOnly = True
     TabOrder = 0
-    ExplicitWidth = 193
   end
   object grpSettings: TGroupBox
     Left = 8
@@ -47,7 +46,9 @@ object PWGenForm: TPWGenForm
     Anchors = [akLeft, akTop, akRight]
     Caption = 'Settings'
     TabOrder = 1
-    ExplicitWidth = 193
+    DesignSize = (
+      220
+      136)
     object lblCharCount: TLabel
       Left = 3
       Top = 113
@@ -103,6 +104,7 @@ object PWGenForm: TPWGenForm
       Top = 83
       Width = 190
       Height = 21
+      Anchors = [akLeft, akTop, akRight]
       TabOrder = 4
       OnChange = edtCustomCharsChange
     end
@@ -111,6 +113,7 @@ object PWGenForm: TPWGenForm
       Top = 110
       Width = 94
       Height = 22
+      Anchors = [akTop, akRight]
       MaxValue = 0
       MinValue = 0
       TabOrder = 5
@@ -122,6 +125,7 @@ object PWGenForm: TPWGenForm
     Top = 177
     Width = 97
     Height = 25
+    Anchors = [akRight, akBottom]
     Caption = 'Generate + copy'
     TabOrder = 2
     OnClick = btnGenerateClick
