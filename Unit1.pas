@@ -40,7 +40,7 @@ type
     Settings1: TMenuItem;
     N3: TMenuItem;
     Settings2: TMenuItem;
-    SwissArmyKnive1: TMenuItem;
+    SwissArmyKnife1: TMenuItem;
     menuReleaseRenew: TMenuItem;
     imgTrayMenuIcons: TImageList;
     Connectionproperties1: TMenuItem;
@@ -578,9 +578,9 @@ var
   I:Integer;
 begin
   // Clear old tools items (tag property > 1)
-  for I:=SwissArmyKnive1.Count-1 downto 0 do begin
-    item := SwissArmyKnive1.Items[I];
-    if (item.Tag > 0) then SwissArmyKnive1.Remove(item);
+  for I:=SwissArmyKnife1.Count-1 downto 0 do begin
+    item := SwissArmyKnife1.Items[I];
+    if (item.Tag > 0) then SwissArmyKnife1.Remove(item);
   end;
   imgTrayMenuIcons.Clear;
 
@@ -588,7 +588,7 @@ begin
   item := TMenuItem.Create(pmTrayIcon);
   item.Caption := '-';
   item.Tag := 1;
-  SwissArmyKnive1.Add(item);
+  SwissArmyKnife1.Add(item);
 
   icon := TIcon.Create;
 
@@ -602,7 +602,7 @@ begin
     imgTrayMenuIcons.AddIcon(icon);
     item.ImageIndex := imgTrayMenuIcons.Count - 1;
 
-    SwissArmyKnive1.Add(item);
+    SwissArmyKnife1.Add(item);
   end;
 
   icon.Free;

@@ -13,12 +13,10 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   Menu = MainMenu1
-  OldCreateOrder = False
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = Refresh1Click
-  PixelsPerInch = 96
   TextHeight = 13
   object tvInterfaces: TTreeView
     Left = 0
@@ -28,6 +26,8 @@ object Form1: TForm1
     Align = alClient
     Indent = 19
     TabOrder = 0
+    ExplicitWidth = 620
+    ExplicitHeight = 640
   end
   object TrayIcon1: TTrayIcon
     PopupMenu = pmTrayIcon
@@ -49,8 +49,8 @@ object Form1: TForm1
       Caption = 'Connection properties'
       Visible = False
     end
-    object SwissArmyKnive1: TMenuItem
-      Caption = 'Swiss Army Knive'
+    object SwissArmyKnife1: TMenuItem
+      Caption = 'Swiss Army Knife'
       object menuReleaseRenew: TMenuItem
         Caption = 'ipconfig release / renew'
         OnClick = menuReleaseRenewClick
