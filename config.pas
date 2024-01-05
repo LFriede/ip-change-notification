@@ -163,8 +163,9 @@ begin
   FilterRegexes.Add('LAN-Verbindung\* \d+');
   FilterRegexes.Add('Loopback Pseudo-Interface \d+');
   FilterRegexes.Add('VirtualBox Host-Only Network');
-  FilterRegexes.Add('vEthernet \(Default Switch\)');
+  FilterRegexes.Add('vEthernet \(.+\)');
   FilterRegexes.Add('LAN-Verbindung');
+  FilterRegexes.Add('OpenVPN Connect DCO Adapter');
 
   tmpTools := TStringList.Create;
   tmpTools.AddPair('Wireshark', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Wireshark\InstallLocation?Wireshark.exe');
