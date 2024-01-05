@@ -9,7 +9,7 @@ uses
   Vcl.Menus, Vcl.ExtCtrls, Generics.Collections, my_ifdef, Winapi.IpTypes,
   my_IPTypes, ShellAPI, System.ImageList, Vcl.ImgList, Registry,
   System.Notification, Form_Popup, Vcl.ComCtrls, Form_About, config, Form_Config,
-  Form_PingGraph, Form_PWGen;
+  Form_PingGraph, Form_PWGen, def_NDIS_Interface_Types;
 
 type
   TIPInterface = record
@@ -93,43 +93,6 @@ begin
     Result := Result + IntToHex(b[I], 2);
     if (I <> 5) then Result := Result + ':';
   end;
-end;
-
-function InterfaceTypeToStr(IfType:Cardinal):string;
-begin
-  case IfType of
-    1: begin
-      Result := 'IF_TYPE_OTHER (';
-    end;
-    6: begin
-      Result := 'IF_TYPE_ETHERNET_CSMACD (';
-    end;
-    9: begin
-      Result := 'IF_TYPE_ISO88025_TOKENRING (';
-    end;
-    23: begin
-      Result := 'IF_TYPE_PPP (';
-    end;
-    24: begin
-      Result := 'IF_TYPE_SOFTWARE_LOOPBACK (';
-    end;
-    37: begin
-      Result := 'IF_TYPE_ATM (';
-    end;
-    71: begin
-      Result := 'IF_TYPE_IEEE80211 (WLAN) (';
-    end;
-    131: begin
-      Result := 'IF_TYPE_TUNNEL (';
-    end;
-    144: begin
-      Result := 'IF_TYPE_IEEE1394 (Firewire) (';
-    end else begin
-      Result := 'Unknown, check MSDN! ('
-    end;
-  end;
-
-  Result := Result + IntToStr(IfType) + ')';
 end;
 
 function OperStatusToStr(OperStatus:IF_OPER_STATUS):string;

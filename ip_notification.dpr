@@ -14,7 +14,8 @@ uses
   Form_Config in 'Form_Config.pas' {ConfigForm},
   Form_PingGraph in 'Form_PingGraph.pas' {PingGraphForm},
   Form_PWGen in 'Form_PWGen.pas' {PWGenForm},
-  my_bcrypt in 'my_bcrypt.pas';
+  my_bcrypt in 'my_bcrypt.pas',
+  def_NDIS_Interface_Types in 'def_NDIS_Interface_Types.pas';
 
 {$R *.res}
 
