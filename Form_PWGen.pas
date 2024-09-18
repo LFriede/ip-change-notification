@@ -115,10 +115,14 @@ begin
   cbLower.Checked := globalconfig.PWGenLower;
   cbUpper.Checked := globalconfig.PWGenUpper;
   cbNumbers.Checked := globalconfig.PWGenNumbers;
-  cbCustom.Checked := globalconfig.PWGenCustom;
   cbAlphanum.Checked := globalconfig.PWGenAlphanum;
   SetAlphanumState;
+
   edtCustomChars.Text := globalconfig.PWGenChars;
+  // Must be set AFTER loading edtCustomChars, edtCustomChars sets cbCustom.Checked
+  // in the OnChange event:
+  cbCustom.Checked := globalconfig.PWGenCustom;
+
   FSettingsChanged := False;
 end;
 
