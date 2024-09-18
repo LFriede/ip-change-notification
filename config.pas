@@ -29,6 +29,7 @@ type
     InstalledTools:TList<TExternalTool>;
     PWGenUpper, PWGenLower, PWGenNumbers, PWGenCustom, PWGenAlphanum:Boolean;
     PWGenChars:string;
+    PWGenLength: Integer;
     constructor Create(filename:string);
     destructor Destroy; override;
     function TestInterfaceRegex(name:string):Boolean;
@@ -78,6 +79,9 @@ begin
     PWGenCustom := ini.ReadBool('PasswordGenerator', 'Custom', True);
     PWGenAlphanum := ini.ReadBool('PasswordGenerator', 'Alphanum', False);
     PWGenChars := ini.ReadString('PasswordGenerator', 'Chars', defaultPWChars);
+    PWGenLength := ini.ReadInteger('PasswordGenerator', 'Length', 10);
+    if (PWGenLength < 1) then PWGenLength := 1;
+    if (PWGenLength > 999) then PWGenLength := 999;
 
     ini.Free;
   end;
@@ -186,6 +190,7 @@ begin
   PWGenCustom := True;
   PWGenAlphanum := False;
   PWGenChars := defaultPWChars;
+  PWGenLength := 10;
 end;
 
 procedure TConfig.SetTools(values:TStringList);
@@ -283,6 +288,7 @@ begin
       ini.WriteBool('PasswordGenerator', 'Custom', PWGenCustom);
       ini.WriteBool('PasswordGenerator', 'Alphanum', PWGenAlphanum);
       ini.WriteString('PasswordGenerator', 'Chars', PWGenChars);
+      ini.WriteInteger('PasswordGenerator', 'Length', PWGenLength);
     except
       on e: Exception do begin
         MessageBox(0, PChar(e.Message), 'Error saving config', MB_ICONERROR);

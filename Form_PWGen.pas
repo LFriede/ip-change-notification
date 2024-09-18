@@ -27,6 +27,7 @@ type
     procedure cbAlphanumClick(Sender: TObject);
     procedure SaveSettings;
     procedure SetAlphanumState;
+    procedure spnCountChange(Sender: TObject);
   private
     { Private-Deklarationen }
     FSettingsChanged:Boolean;
@@ -123,6 +124,8 @@ begin
   // in the OnChange event:
   cbCustom.Checked := globalconfig.PWGenCustom;
 
+  spnCount.Value := globalconfig.PWGenLength;
+
   FSettingsChanged := False;
 end;
 
@@ -134,6 +137,7 @@ begin
   globalconfig.PWGenCustom := cbCustom.Checked;
   globalconfig.PWGenAlphanum := cbAlphanum.Checked;
   globalconfig.PWGenChars := edtCustomChars.Text;
+  globalconfig.PWGenLength := spnCount.Value;
 
   globalconfig.SaveConfig;
 end;
@@ -149,6 +153,11 @@ begin
   cbLower.Enabled := flag;
   cbUpper.Enabled := flag;
   cbNumbers.Enabled := flag;
+end;
+
+procedure TPWGenForm.spnCountChange(Sender: TObject);
+begin
+  FSettingsChanged := True;
 end;
 
 end.

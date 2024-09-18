@@ -112,10 +112,11 @@ object PWGenForm: TPWGenForm
       Width = 94
       Height = 22
       Anchors = [akTop, akRight]
-      MaxValue = 0
-      MinValue = 0
+      MaxValue = 999
+      MinValue = 1
       TabOrder = 5
       Value = 10
+      OnChange = spnCountChange
     end
     object cbAlphanum: TCheckBox
       Left = 73
