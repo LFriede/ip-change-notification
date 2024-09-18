@@ -19,11 +19,14 @@ type
     spnCount: TSpinEdit;
     btnGenerate: TButton;
     lblHint: TLabel;
+    cbAlphanum: TCheckBox;
     procedure btnGenerateClick(Sender: TObject);
     procedure edtCustomCharsChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure cbClick(Sender: TObject);
+    procedure cbAlphanumClick(Sender: TObject);
     procedure SaveSettings;
+    procedure SetAlphanumState;
   private
     { Private-Deklarationen }
     FSettingsChanged:Boolean;
@@ -50,9 +53,20 @@ var
 begin
   charSet := '';
   res := '';
-  if cbLower.Checked then charSet := charSet + 'abcdefghijklmnopqrstuvwxyz';
-  if cbUpper.Checked then charSet := charSet + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  if cbNumbers.Checked then charSet := charSet + '0123456789';
+
+  // Seperate alphanum checkboxes can be disabled by cbAlphanum and should not
+  // be used if they are.
+  if (cbLower.Checked and cbLower.Enabled) then charSet := charSet + 'abcdefghijklmnopqrstuvwxyz';
+  if (cbUpper.Checked and cbUpper.Enabled) then charSet := charSet + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  if (cbNumbers.Checked and cbNumbers.Enabled) then charSet := charSet + '0123456789';
+
+  if (cbAlphanum.Checked) then begin
+    charSet := charSet +
+      'abcdefghijkmnopqrstuvwxyz' + // Without lowercase L
+      'ABCDEFGHJKLMNPQRSTUVWXYZ'  + // Without uppercase i and o
+      '123456789';                  // Without zero
+  end;
+
   if cbCustom.Checked then charSet := charSet + edtCustomChars.Text;
 
   if (Length(charSet) = 0) then begin
@@ -78,6 +92,13 @@ begin
   if (FSettingsChanged) then SaveSettings;
 end;
 
+procedure TPWGenForm.cbAlphanumClick(Sender: TObject);
+begin
+  SetAlphanumState;
+
+  FSettingsChanged := True;
+end;
+
 procedure TPWGenForm.cbClick(Sender: TObject);
 begin
   FSettingsChanged := True;
@@ -95,6 +116,8 @@ begin
   cbUpper.Checked := globalconfig.PWGenUpper;
   cbNumbers.Checked := globalconfig.PWGenNumbers;
   cbCustom.Checked := globalconfig.PWGenCustom;
+  cbAlphanum.Checked := globalconfig.PWGenAlphanum;
+  SetAlphanumState;
   edtCustomChars.Text := globalconfig.PWGenChars;
   FSettingsChanged := False;
 end;
@@ -105,9 +128,23 @@ begin
   globalconfig.PWGenUpper := cbUpper.Checked;
   globalconfig.PWGenNumbers := cbNumbers.Checked;
   globalconfig.PWGenCustom := cbCustom.Checked;
+  globalconfig.PWGenAlphanum := cbAlphanum.Checked;
   globalconfig.PWGenChars := edtCustomChars.Text;
 
   globalconfig.SaveConfig;
+end;
+
+// Sets enabled state on other checkboxes depeding on alphanum checkbox state.
+// Should be executed on click or after changing checkbox manually (settings load)
+procedure TPWGenForm.SetAlphanumState;
+var
+  flag: Boolean;
+begin
+  flag := not cbAlphanum.Checked;
+
+  cbLower.Enabled := flag;
+  cbUpper.Enabled := flag;
+  cbNumbers.Enabled := flag;
 end;
 
 end.

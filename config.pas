@@ -27,7 +27,7 @@ type
     PopupTime:Integer;
     ConfiguredTools:TStringList;
     InstalledTools:TList<TExternalTool>;
-    PWGenUpper, PWGenLower, PWGenNumbers, PWGenCustom:Boolean;
+    PWGenUpper, PWGenLower, PWGenNumbers, PWGenCustom, PWGenAlphanum:Boolean;
     PWGenChars:string;
     constructor Create(filename:string);
     destructor Destroy; override;
@@ -76,6 +76,7 @@ begin
     PWGenLower := ini.ReadBool('PasswordGenerator', 'Lower', True);
     PWGenNumbers := ini.ReadBool('PasswordGenerator', 'Numbers', True);
     PWGenCustom := ini.ReadBool('PasswordGenerator', 'Custom', True);
+    PWGenAlphanum := ini.ReadBool('PasswordGenerator', 'Alphanum', False);
     PWGenChars := ini.ReadString('PasswordGenerator', 'Chars', defaultPWChars);
 
     ini.Free;
@@ -183,6 +184,7 @@ begin
   PWGenLower := True;
   PWGenNumbers := True;
   PWGenCustom := True;
+  PWGenAlphanum := False;
   PWGenChars := defaultPWChars;
 end;
 
@@ -279,6 +281,7 @@ begin
       ini.WriteBool('PasswordGenerator', 'Lower', PWGenLower);
       ini.WriteBool('PasswordGenerator', 'Numbers', PWGenNumbers);
       ini.WriteBool('PasswordGenerator', 'Custom', PWGenCustom);
+      ini.WriteBool('PasswordGenerator', 'Alphanum', PWGenAlphanum);
       ini.WriteString('PasswordGenerator', 'Chars', PWGenChars);
     except
       on e: Exception do begin

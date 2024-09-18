@@ -12,17 +12,15 @@ object PWGenForm: TPWGenForm
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnShow = FormShow
   DesignSize = (
     236
     259)
-  PixelsPerInch = 96
   TextHeight = 13
   object lblHint: TLabel
     Left = 8
     Top = 218
-    Width = 220
+    Width = 170
     Height = 26
     Anchors = [akLeft, akRight, akBottom]
     Caption = '* Password generation is based on BCryptGenRandom Winapi.'
@@ -118,6 +116,16 @@ object PWGenForm: TPWGenForm
       MinValue = 0
       TabOrder = 5
       Value = 10
+    end
+    object cbAlphanum: TCheckBox
+      Left = 73
+      Top = 16
+      Width = 144
+      Height = 25
+      Caption = 'Alphanumeric without l, I, 0, and O'
+      TabOrder = 6
+      WordWrap = True
+      OnClick = cbAlphanumClick
     end
   end
   object btnGenerate: TButton
