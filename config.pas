@@ -179,6 +179,7 @@ begin
   tmpTools.AddPair('Advanced IP Scanner', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{CB67C185-D2DF-455E-B9B7-00C8E505186F}\InstallLocation?advanced_ip_scanner.exe');
   tmpTools.AddPair('LANconfig', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\LANconfig\DisplayIcon');
   tmpTools.AddPair('LANmonitor', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\LANmonitor\DisplayIcon');
+  tmpTools.AddPair('FileZilla Client', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\FileZilla Client\InstallLocation?FileZilla.exe');
   SetTools(tmpTools);
   tmpTools.Free;
 
