@@ -27,7 +27,7 @@ type
     PopupTime:Integer;
     ConfiguredTools:TStringList;
     InstalledTools:TList<TExternalTool>;
-    PWGenUpper, PWGenLower, PWGenNumbers, PWGenCustom, PWGenAlphanum:Boolean;
+    PWGenUpper, PWGenLower, PWGenNumbers, PWGenCustom, PWGenAlphanum, PWGenCopy:Boolean;
     PWGenChars:string;
     PWGenLength: Integer;
     constructor Create(filename:string);
@@ -82,6 +82,7 @@ begin
     PWGenLength := ini.ReadInteger('PasswordGenerator', 'Length', 10);
     if (PWGenLength < 1) then PWGenLength := 1;
     if (PWGenLength > 999) then PWGenLength := 999;
+    PWGenCopy := ini.ReadBool('PasswordGenerator', 'Copy', True);
 
     ini.Free;
   end;
@@ -192,6 +193,7 @@ begin
   PWGenAlphanum := False;
   PWGenChars := defaultPWChars;
   PWGenLength := 10;
+  PWGenCopy := True;
 end;
 
 procedure TConfig.SetTools(values:TStringList);
@@ -290,6 +292,7 @@ begin
       ini.WriteBool('PasswordGenerator', 'Alphanum', PWGenAlphanum);
       ini.WriteString('PasswordGenerator', 'Chars', PWGenChars);
       ini.WriteInteger('PasswordGenerator', 'Length', PWGenLength);
+      ini.WriteBool('PasswordGenerator', 'Copy', PWGenCopy);
     except
       on e: Exception do begin
         MessageBox(0, PChar(e.Message), 'Error saving config', MB_ICONERROR);

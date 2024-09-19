@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Samples.Spin, my_bcrypt, ClipBrd, config;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Samples.Spin, my_bcrypt, ClipBrd, config,
+  System.ImageList, Vcl.ImgList;
 
 type
   TPWGenForm = class(TForm)
@@ -20,6 +21,9 @@ type
     btnGenerate: TButton;
     lblHint: TLabel;
     cbAlphanum: TCheckBox;
+    btnCopy: TButton;
+    ImageList: TImageList;
+    cbCopy: TCheckBox;
     procedure btnGenerateClick(Sender: TObject);
     procedure edtCustomCharsChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -28,6 +32,7 @@ type
     procedure SaveSettings;
     procedure SetAlphanumState;
     procedure spnCountChange(Sender: TObject);
+    procedure btnCopyClick(Sender: TObject);
   private
     { Private-Deklarationen }
     FSettingsChanged:Boolean;
@@ -45,6 +50,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TPWGenForm.btnCopyClick(Sender: TObject);
+begin
+  Clipboard.AsText := edtOutput.Text;
+end;
 
 procedure TPWGenForm.btnGenerateClick(Sender: TObject);
 var
@@ -87,7 +97,7 @@ begin
   end;
 
   edtOutput.Text := res;
-  Clipboard.AsText := res;
+  if (cbCopy.Checked) then Clipboard.AsText := res;
 
   // Save settings if changed
   if (FSettingsChanged) then SaveSettings;
@@ -125,6 +135,7 @@ begin
   cbCustom.Checked := globalconfig.PWGenCustom;
 
   spnCount.Value := globalconfig.PWGenLength;
+  cbCopy.Checked := globalconfig.PWGenCopy;
 
   FSettingsChanged := False;
 end;
@@ -138,6 +149,7 @@ begin
   globalconfig.PWGenAlphanum := cbAlphanum.Checked;
   globalconfig.PWGenChars := edtCustomChars.Text;
   globalconfig.PWGenLength := spnCount.Value;
+  globalconfig.PWGenCopy := cbCopy.Checked;
 
   globalconfig.SaveConfig;
 end;
