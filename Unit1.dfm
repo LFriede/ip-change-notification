@@ -26,8 +26,6 @@ object Form1: TForm1
     Align = alClient
     Indent = 19
     TabOrder = 0
-    ExplicitWidth = 620
-    ExplicitHeight = 640
   end
   object TrayIcon1: TTrayIcon
     PopupMenu = pmTrayIcon
@@ -54,6 +52,10 @@ object Form1: TForm1
       object menuReleaseRenew: TMenuItem
         Caption = 'ipconfig release / renew'
         OnClick = menuReleaseRenewClick
+      end
+      object menuHostsfile: TMenuItem
+        Caption = 'Edit hosts file'
+        OnClick = menuHostsfileClick
       end
       object Pinggraph1: TMenuItem
         Caption = 'Ping graph...'

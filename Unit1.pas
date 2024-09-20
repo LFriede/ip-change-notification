@@ -9,7 +9,8 @@ uses
   Vcl.Menus, Vcl.ExtCtrls, Generics.Collections, my_ifdef, Winapi.IpTypes,
   my_IPTypes, ShellAPI, System.ImageList, Vcl.ImgList, Registry,
   System.Notification, Form_Popup, Vcl.ComCtrls, Form_About, config, Form_Config,
-  Form_PingGraph, Form_PWGen, def_NDIS_Interface_Types;
+  Form_PingGraph, Form_PWGen, def_NDIS_Interface_Types, Winapi.ShlObj,
+  WinApi.KnownFolders, Winapi.ActiveX;
 
 type
   TIPInterface = record
@@ -46,6 +47,7 @@ type
     Connectionproperties1: TMenuItem;
     Pinggraph1: TMenuItem;
     menuPWGen: TMenuItem;
+    menuHostsfile: TMenuItem;
     procedure CheckTrayIcon;
     procedure ConnectionPropertiesOnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -67,6 +69,7 @@ type
     procedure menuPWGenClick(Sender: TObject);
     procedure TrayIcon1MouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);
+    procedure menuHostsfileClick(Sender: TObject);
   private
     { Private-Deklarationen }
     IpChangeHandle:THandle;
@@ -456,6 +459,16 @@ end;
 procedure TForm1.FormDestroy(Sender: TObject);
 begin
   AddressDict.Free;
+end;
+
+procedure TForm1.menuHostsfileClick(Sender: TObject);
+var
+  path: PChar;
+begin
+  if SHGetKnownFolderPath(FOLDERID_System, KF_FLAG_DEFAULT, 0, path) = S_OK then begin
+    ShellExecute(0, 'RunAs', 'notepad.exe', PChar(path + '\drivers\etc\hosts'), nil, SW_SHOWNORMAL);
+  end;
+  CoTaskMemFree(path);
 end;
 
 procedure TForm1.menuPWGenClick(Sender: TObject);
