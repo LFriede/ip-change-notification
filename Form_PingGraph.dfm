@@ -12,14 +12,12 @@ object PingGraphForm: TPingGraphForm
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   DesignSize = (
     547
     371)
-  PixelsPerInch = 96
   TextHeight = 13
   object lbl_Xms: TLabel
     Left = 423

@@ -48,10 +48,10 @@ type
     { Private-Deklarationen }
     pingRecord:Array of Cardinal;
     pingIndex:Integer;
-    pingAlternate:Boolean;
     pingStatus:Integer;
     pingThread:TPingThread;
     pingThreadRunning:Boolean;
+    procedure LogAdd(LogStr: string);
     procedure StartPingThread(Host:string);
     procedure StopPingThread(wait:Boolean);
   public
@@ -145,6 +145,14 @@ begin
   if (pingThreadRunning) then StopPingThread(True); // Wait for graceful termination
 end;
 
+procedure TPingGraphForm.LogAdd(LogStr: string);
+var
+  timestr: string;
+begin
+  timestr := FormatDateTime('hh:nn:ss.zzz ', Now());
+  memoLog.Lines.Add(timestr + LogStr);
+end;
+
 procedure TPingGraphForm.PingThreadReply(const AReplyStatus: TReplyStatus; thread:TThread);
 var
   s:string;
@@ -158,16 +166,13 @@ begin
 
   s := IntToStr(AReplyStatus.MsRoundTripTime);
   lblStats.Caption := 'Current: ' + s + ' ms';
-  pingAlternate := not pingAlternate;
-  if (pingAlternate) then begin
-    s := ':) ' + s + ' ms';
-  end else begin
-    s := ':D ' + s + ' ms';
-  end;
+
+  s := s + ' ms';
+
   if (AReplyStatus.ReplyStatusType = rsTimeOut) then s := s + ' (timeout)';
   if (AReplyStatus.ReplyStatusType = rsErrorUnreachable) then s := s + ' (unreachable)';
 
-  memoLog.Lines.Add(s);
+  LogAdd(s);
 
   if (pingStatus <> Integer(AReplyStatus.ReplyStatusType)) then begin
     pingStatus := Integer(AReplyStatus.ReplyStatusType);
@@ -191,14 +196,7 @@ begin
   // Cut newline
   if (log[Length(log) - 1] = #$0d) then log[Length(log) - 1] := #0;
 
-  pingAlternate := not pingAlternate;
-  if (pingAlternate) then begin
-    log := ':) Exception: ' + log;
-  end else begin
-    log := ':D Exception: ' + log;
-  end;
-
-  memoLog.Lines.Add(log);
+  LogAdd('Exception: ' + log);
 end;
 
 procedure TPingGraphForm.pntGraphPaint(Sender: TObject);
