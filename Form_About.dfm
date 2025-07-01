@@ -11,18 +11,16 @@ object FormAbout: TFormAbout
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object lblText: TLabel
     Left = 114
     Top = 8
-    Width = 130
+    Width = 158
     Height = 52
     Caption = 
-      'IP Change Notification 0.1'#13#10#169' 2020 by gORDon_vdLg'#13#10#13#10'Visit this ' +
-      'project on GitHub:'
+      'IP Change Notification 0.2'#13#10#169' 2020 - 2025 by gORDon_vdLg'#13#10#13#10'Visi' +
+      't this project on GitHub:'
   end
   object lblGitHub: TLabel
     Left = 114

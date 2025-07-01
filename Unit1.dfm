@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'IP Change Notification 0.1'
+  Caption = 'IP Change Notification 0.2'
   ClientHeight = 641
   ClientWidth = 624
   Color = clBtnFace
