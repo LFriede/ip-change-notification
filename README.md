@@ -23,7 +23,7 @@ Extract the downloaded ZIP file to a location where the program has write access
 
 ## Build
 
-Current versions are built with Delphi 10.3 Community Edition, since there are no special requirements it should compile on most Delphi versions. The source contains some Winapi definitions that are missing in the official Delphi headers, they may be removed in future versions. Release binarys are packed with UPX.
+Current versions are built with Delphi 12 Community Edition, since there are no special requirements it should compile on most Delphi versions. The source contains some Winapi definitions that are missing in the official Delphi headers, they may be removed in future versions. Release binarys are packed with UPX.
 
 
 ## Screenshots
@@ -37,3 +37,5 @@ Current versions are built with Delphi 10.3 Community Edition, since there are n
 ![mainwindow](_res/mainwindow.png?raw=true)
 
 ![ping_graph](_res/ping_graph.png?raw=true)
+
+![password_generator](_res/pwgen.png?raw=true)
